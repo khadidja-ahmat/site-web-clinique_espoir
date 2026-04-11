@@ -182,7 +182,7 @@ DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
 DB_DATABASE=clinique
-DB_USERNAME=root
+DB_USERNAME=
 DB_PASSWORD=
 ```
 
@@ -349,8 +349,3 @@ Ces fichiers sont protégés par `.gitignore`.
 
 Projet réalisé par **Khadidja Ahmat Hassan**.
 
-Repository GitHub:
-
-```text
-https://github.com/khadidja-ahmat/site-web-clinique_espoir
-```
