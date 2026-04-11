@@ -1,6 +1,6 @@
 # Site Web Clinique Espoir
 
-Application web de gestion pour la **Clinique Espoir**, développée avec **Laravel 9**.  
+Application web de gestion pour la **Clinique Espoir de vue**, développée avec **Laravel 9**.  
 Le projet centralise les principales opérations d'une structure médicale: gestion des patients, médecins, rendez-vous, consultations, ordonnances, employés et historiques médicaux.
 
 L'objectif est simple: proposer une interface claire pour organiser les informations médicales et administratives d'une clinique, avec des modules faciles à utiliser et une structure Laravel propre à faire évoluer.
