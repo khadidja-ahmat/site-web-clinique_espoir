@@ -1,66 +1,356 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Site Web Clinique Espoir
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Application web de gestion pour la **Clinique Espoir**, développée avec **Laravel 9**.  
+Le projet centralise les principales opérations d'une structure médicale: gestion des patients, médecins, rendez-vous, consultations, ordonnances, employés et historiques médicaux.
 
-## About Laravel
+L'objectif est simple: proposer une interface claire pour organiser les informations médicales et administratives d'une clinique, avec des modules faciles à utiliser et une structure Laravel propre à faire évoluer.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Sommaire
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- [Aperçu du projet](#apercu-du-projet)
+- [Fonctionnalités principales](#fonctionnalites-principales)
+- [Technologies utilisées](#technologies-utilisees)
+- [Structure du projet](#structure-du-projet)
+- [Installation locale](#installation-locale)
+- [Configuration de la base de données](#configuration-de-la-base-de-donnees)
+- [Routes principales](#routes-principales)
+- [API disponible](#api-disponible)
+- [Commandes utiles](#commandes-utiles)
+- [Sécurité et fichiers ignorés](#securite-et-fichiers-ignores)
+- [Auteur](#auteur)
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Aperçu du projet
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+**Clinique Espoir** est une application Laravel conçue pour accompagner la gestion quotidienne d'un établissement de santé.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Elle permet de suivre:
 
-## Laravel Sponsors
+- les dossiers des patients;
+- les informations des médecins;
+- les rendez-vous médicaux;
+- les consultations effectuées;
+- les ordonnances prescrites;
+- les employés de la clinique;
+- les historiques médicaux liés aux patients.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+Le projet contient aussi des pages publiques comme l'accueil, la page à propos et la page contact.
 
-### Premium Partners
+---
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+## Fonctionnalités principales
 
-## Contributing
+### Gestion des patients
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+- Ajouter un nouveau patient.
+- Afficher la liste des patients.
+- Modifier les informations d'un patient.
+- Supprimer un patient.
+- Enregistrer les informations importantes: nom, date de naissance, genre, adresse, téléphone, ACO et AFTO.
 
-## Code of Conduct
+### Gestion des médecins
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+- Ajouter un médecin.
+- Afficher la liste des médecins.
+- Modifier les informations d'un médecin.
+- Supprimer un médecin.
+- Gérer les informations comme le nom, le genre, la spécialité, l'adresse, le téléphone, l'email et l'image.
 
-## Security Vulnerabilities
+### Gestion des rendez-vous
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+- Créer un rendez-vous entre un patient et un médecin.
+- Afficher les rendez-vous avec les informations liées au patient et au médecin.
+- Modifier la date, le type ou le statut du rendez-vous.
+- Supprimer un rendez-vous.
 
-## License
+### Gestion des consultations
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+- Enregistrer une consultation.
+- Associer une consultation à un patient et à un médecin.
+- Suivre le type de consultation et le résultat.
+- Modifier ou supprimer une consultation.
+
+### Gestion des ordonnances
+
+- Ajouter une ordonnance pour un patient.
+- Renseigner le médicament, le dosage, la fréquence d'utilisation, la durée de prescription et les dates importantes.
+- Modifier ou supprimer une ordonnance.
+
+### Gestion des employés
+
+- Ajouter les employés de la clinique.
+- Gérer leur poste, contact, email, adresse et image.
+- Modifier ou supprimer une fiche employé.
+
+### Gestion des historiques médicaux
+
+- Enregistrer les antécédents d'un patient.
+- Suivre les résultats, prescriptions et tests médicaux.
+- Modifier ou supprimer un historique.
+
+---
+
+## Technologies utilisées
+
+- **Laravel 9**: framework PHP principal.
+- **PHP 8.0+**: langage côté serveur.
+- **MySQL**: base de données relationnelle.
+- **Blade**: moteur de templates Laravel.
+- **Bootstrap / CSS / JavaScript**: interface utilisateur.
+- **Vite**: compilation des assets front-end.
+- **Composer**: gestion des dépendances PHP.
+- **npm**: gestion des dépendances JavaScript.
+- **Git & GitHub**: versionnement et hébergement du code.
+
+---
+
+## Structure du projet
+
+```text
+clinique/
+├── app/
+│   ├── Http/Controllers/    # Contrôleurs web et API
+│   └── Models/              # Modèles Laravel
+├── config/                  # Configuration Laravel
+├── database/                # Migrations et seeders
+├── public/                  # Fichiers publics, images, CSS, JS
+├── resources/
+│   ├── css/                 # Styles de l'application
+│   ├── js/                  # JavaScript source
+│   └── views/               # Pages Blade
+├── routes/
+│   ├── web.php              # Routes web
+│   └── api.php              # Routes API
+├── storage/                 # Cache, sessions, logs
+├── tests/                   # Tests Laravel
+├── .env.example             # Exemple de configuration
+├── composer.json            # Dépendances PHP
+├── package.json             # Dépendances JavaScript
+└── README.md                # Documentation du projet
+```
+
+---
+
+## Installation locale
+
+### 1. Cloner le projet
+
+```bash
+git clone https://github.com/khadidja-ahmat/site-web-clinique_espoir.git
+cd site-web-clinique_espoir
+```
+
+### 2. Installer les dépendances PHP
+
+```bash
+composer install
+```
+
+### 3. Installer les dépendances JavaScript
+
+```bash
+npm install
+```
+
+### 4. Créer le fichier d'environnement
+
+```bash
+cp .env.example .env
+```
+
+Sur Windows PowerShell, utiliser plutôt:
+
+```powershell
+Copy-Item .env.example .env
+```
+
+### 5. Générer la clé Laravel
+
+```bash
+php artisan key:generate
+```
+
+### 6. Configurer la base de données
+
+Dans le fichier `.env`, adapter les informations MySQL:
+
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=clinique
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+### 7. Lancer les migrations disponibles
+
+```bash
+php artisan migrate
+```
+
+### 8. Lancer le serveur Laravel
+
+```bash
+php artisan serve
+```
+
+L'application sera disponible sur:
+
+```text
+http://127.0.0.1:8000
+```
+
+### 9. Compiler les assets front-end
+
+Pour le développement:
+
+```bash
+npm run dev
+```
+
+Pour générer les fichiers optimisés:
+
+```bash
+npm run build
+```
+
+---
+
+## Configuration de la base de données
+
+Les modèles du projet utilisent les tables suivantes:
+
+| Module | Table utilisée |
+| --- | --- |
+| Patients | `patient` |
+| Médecins | `medecin` |
+| Rendez-vous | `rendezvous` |
+| Consultations | `consultation` |
+| Ordonnances | `ordonnance` |
+| Employés | `employe` |
+| Historiques | `historique` |
+
+> Note importante: le dépôt contient les modèles et contrôleurs de ces modules, mais les migrations personnalisées des tables métier ne sont pas encore incluses. Pour installer le projet sur un nouvel ordinateur, il faudra créer ces tables avec des migrations Laravel ou importer une base de données existante.
+
+---
+
+## Routes principales
+
+### Pages publiques
+
+| Page | URL |
+| --- | --- |
+| Accueil | `/home` |
+| À propos | `/about` |
+| Contact | `/contact` |
+
+### Modules de gestion
+
+| Module | Liste | Création |
+| --- | --- | --- |
+| Patients | `/patient` | `/create_p` |
+| Médecins | `/medecin` | `/create_m` |
+| Rendez-vous | `/rendezvous` | `/create_r` |
+| Consultations | `/consultation` | `/create_c` |
+| Ordonnances | `/ordonnance` | `/create_o` |
+| Employés | `/employe` | `/create_e` |
+| Historiques | `/historique` | `/create_h` |
+
+Chaque module possède aussi des routes pour modifier, mettre à jour et supprimer les données.
+
+---
+
+## API disponible
+
+Le projet contient quelques routes API dans `routes/api.php`.
+
+| Méthode | Endpoint | Description |
+| --- | --- | --- |
+| GET | `/api/patients` | Liste des patients |
+| POST | `/api/patient` | Création d'un patient |
+| PUT | `/api/patient/{id}` | Modification d'un patient |
+| DELETE | `/api/patient/{id}` | Suppression d'un patient |
+| GET | `/api/consultations` | Liste des consultations |
+| POST | `/api/consultation` | Création d'une consultation |
+
+---
+
+## Commandes utiles
+
+Vérifier l'état Git:
+
+```bash
+git status
+```
+
+Ajouter les modifications:
+
+```bash
+git add .
+```
+
+Créer un commit:
+
+```bash
+git commit -m "Description de la modification"
+```
+
+Envoyer sur GitHub:
+
+```bash
+git push
+```
+
+Vider les caches Laravel:
+
+```bash
+php artisan optimize:clear
+```
+
+Lancer les tests:
+
+```bash
+php artisan test
+```
+
+---
+
+## Sécurité et fichiers ignorés
+
+Certains fichiers ne doivent pas être envoyés sur GitHub:
+
+- `.env`: contient les informations sensibles du projet.
+- `vendor/`: dépendances PHP installées par Composer.
+- `node_modules/`: dépendances JavaScript.
+- `storage/logs/`: logs locaux de Laravel.
+- `.idea/`: configuration locale de l'éditeur.
+
+Ces fichiers sont protégés par `.gitignore`.
+
+---
+
+## Améliorations possibles
+
+- Ajouter les migrations pour toutes les tables métier.
+- Ajouter une authentification pour protéger l'espace d'administration.
+- Améliorer la validation des formulaires.
+- Ajouter une recherche et des filtres dans les listes.
+- Ajouter des tableaux de bord statistiques.
+- Ajouter des tests pour les modules principaux.
+- Finaliser et sécuriser les routes API.
+
+---
+
+## Auteur
+
+Projet réalisé par **Khadidja Ahmat Hassan**.
+
+Repository GitHub:
+
+```text
+https://github.com/khadidja-ahmat/site-web-clinique_espoir
+```
