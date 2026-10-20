@@ -54,7 +54,7 @@
                         <div class="header-top__left d-flex align-items-center">
                             <div class="logo">
                                 <a href="index.html">
-                                    <img src="assets/images/logo/images.png" alt="img">
+                                    <img src="{{ asset('assets/images/logo/images.png') }}" alt="img">
                                 </a>
                             </div>
                             <ul class="header-top__infos pl-75 list-unstyled d-flex align-items-center mb-0">
@@ -84,27 +84,28 @@
                     <div class="col-xl-8 col-lg-9 col-6">
                         <div class="logo mm-only d-md-block d-lg-none">
                             <a href="index.html">
-                                <img src="assets/images/logo/logo-black.png" alt="img">
+                                <img src="{{ asset('assets/images/logo/logo-black.png') }}" alt="img">
                             </a>
                         </div>
                         <div class="main-menu main-menu__2">
                             <nav id="mobile-menu">
                                 <ul>
-                                    <li><a href="home">Home</a>
+                                    <li><a href="{{ route('home') }}">Home</a>
                                         {{-- <ul class="sub-menu">
                                             <li><a href="index.html">Home 01</a></li>
                                             <li><a href="home-2.html">Home 02</a></li>
                                             <li class="active"><a href="home-3.html">Home 03</a></li>
                                         </ul> --}}
                                     </li>
-                                    <li><a href="about">About</a>
+                                    <li><a href="{{ route('about') }}">About</a>
                                     {{--  <ul class="sub-menu"aria-labelledby="navbarDropdown">
                                          <li><a class="dropdown-item" href="{{route('list.patient')}}">Emplacement</a></li>
                                          <li><a class="dropdown-item" href="{{route('list.employe')}}">offres </a></li>
                                          <li><a class="dropdown-item" href="{{route('list.employe')}}">Adresse</a></li>
                                         </ul> --}}
                                     </li>
-                                    <li><a href="#0">listes</a>
+                                    @auth
+<li><a href="#0">listes</a>
                                          <ul class="sub-menu"aria-labelledby="navbarDropdown">
                                          <li><a href="{{route('list.patient')}}">Patients</a></li>
                                          <li><a href="{{route('list.employe')}}">Employés</a></li>
@@ -119,7 +120,18 @@
                                         <li><a class="dropdown-item" href="{{route('list.historique')}}">Historiques Médical</a></li>
                                         </ul> 
                                     </li>
-                                    <li><a href="contact">Contact</a></li>
+                                    @endauth
+<li><a href="{{ route('contact') }}">Contact</a></li>
+                                    @guest
+                                    <li><a href="{{ route('login') }}">Connexion</a></li>
+                                    @else
+                                    <li>
+                                        <form method="POST" action="{{ route('logout') }}" style="display:inline">
+                                            @csrf
+                                            <button type="submit" class="btn btn-link p-0" style="color:inherit;font:inherit;text-transform:inherit">Déconnexion</button>
+                                        </form>
+                                    </li>
+                                    @endguest
                                 </ul>
                             </nav>
                         </div>
@@ -132,7 +144,7 @@
 									<span class="close"><i class="fal fa-times"></i></span>
                                 </div>
                                 <div class="search__form">
-                                    <form role="search" method="get" action="https://xpressrow.com/html/cafena/cafena/index.html">
+                                    <form role="search" method="get" action="{{ route('home') }}">
                                         <input type="search" name="s" value="" placeholder="Search Keywords">
                                         <button type="submit"><i class="far fa-search"></i></button>
                                     </form>
@@ -167,7 +179,7 @@
         <div class="side-info__wrapper d-flex align-items-center justify-content-between">
             <div class="side-info__logo">
                 <a href="index.html">
-                    <img src="assets/images/logo/logo-black.png" alt="logo">
+                    <img src="{{ asset('assets/images/logo/logo-black.png') }}" alt="logo">
                 </a>
             </div>
             <div class="side-info__close">
@@ -220,7 +232,7 @@
         <div class="side-info__wrapper d-flex align-items-center justify-content-between">
             <div class="side-info__logo">
                 <a href="index.html">
-                    <img src="assets/images/logo/logo-black.png" alt="logo">
+                    <img src="{{ asset('assets/images/logo/logo-black.png') }}" alt="logo">
                 </a>
             </div>
             <div class="side-info__close">
@@ -269,7 +281,7 @@
             <div class="cart-bar__lists">
                 <div class="cart-bar__item position-relative d-flex">
                     <div class="thumb">
-                        <img src="assets/images/top-grade/tg-1.png" alt="image_not_found">
+                        <img src="{{ asset('assets/images/top-grade/tg-1.png') }}" alt="image_not_found">
                     </div>
                     <div class="content">
                         <h4 class="title">
@@ -281,7 +293,7 @@
                 </div>
                 <div class="cart-bar__item position-relative d-flex">
                     <div class="thumb">
-                        <img src="assets/images/top-grade/tg-2.png" alt="image_not_found">
+                        <img src="{{ asset('assets/images/top-grade/tg-2.png') }}" alt="image_not_found">
                     </div>
                     <div class="content">
                         <h4 class="title">
@@ -293,7 +305,7 @@
                 </div>
                 <div class="cart-bar__item position-relative d-flex">
                     <div class="thumb">
-                        <img src="assets/images/top-grade/tg-3.png" alt="image_not_found">
+                        <img src="{{ asset('assets/images/top-grade/tg-3.png') }}" alt="image_not_found">
                     </div>
                     <div class="content">
                         <h4 class="title">
@@ -305,7 +317,7 @@
                 </div>
                 <div class="cart-bar__item position-relative d-flex">
                     <div class="thumb">
-                        <img src="assets/images/top-grade/tg-4.png" alt="image_not_found">
+                        <img src="{{ asset('assets/images/top-grade/tg-4.png') }}" alt="image_not_found">
                     </div>
                     <div class="content">
                         <h4 class="title">

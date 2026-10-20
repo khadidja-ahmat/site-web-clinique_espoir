@@ -43,7 +43,7 @@
                                             <img src="{{url('images/articles/'.$employe -> image)}}" alt="" width="40" height="50"
                                                 class="rounded-circle">
                                         @else
-                                            <img src="{{url('assets/images/profile.jpeg')}}" alt="" width="40" height="40"
+                                            <img src="{{ asset('assets/images/profile.jpeg') }}" alt="" width="40" height="40"
                                                  class="rounded-circle">
                                         @endif
                                     </td>

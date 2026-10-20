@@ -5,7 +5,7 @@
         <div class="side-info__wrapper d-flex align-items-center justify-content-between">
             <div class="side-info__logo">
                 <a href="index.html">
-                    <img src="assets/images/logo/logo-black.png" alt="logo">
+                    <img src="{{ asset('assets/images/logo/logo-black.png') }}" alt="logo">
                 </a>
             </div>
             <div class="side-info__close">
@@ -54,7 +54,7 @@
             <div class="cart-bar__lists">
                 <div class="cart-bar__item position-relative d-flex">
                     <div class="thumb">
-                        <img src="assets/images/top-grade/tg-1.png" alt="image_not_found">
+                        <img src="{{ asset('assets/images/top-grade/tg-1.png') }}" alt="image_not_found">
                     </div>
                     <div class="content">
                         <h4 class="title">
@@ -66,7 +66,7 @@
                 </div>
                 <div class="cart-bar__item position-relative d-flex">
                     <div class="thumb">
-                        <img src="assets/images/top-grade/tg-2.png" alt="image_not_found">
+                        <img src="{{ asset('assets/images/top-grade/tg-2.png') }}" alt="image_not_found">
                     </div>
                     <div class="content">
                         <h4 class="title">
@@ -78,7 +78,7 @@
                 </div>
                 <div class="cart-bar__item position-relative d-flex">
                     <div class="thumb">
-                        <img src="assets/images/top-grade/tg-3.png" alt="image_not_found">
+                        <img src="{{ asset('assets/images/top-grade/tg-3.png') }}" alt="image_not_found">
                     </div>
                     <div class="content">
                         <h4 class="title">
@@ -90,7 +90,7 @@
                 </div>
                 <div class="cart-bar__item position-relative d-flex">
                     <div class="thumb">
-                        <img src="assets/images/top-grade/tg-4.png" alt="image_not_found">
+                        <img src="{{ asset('assets/images/top-grade/tg-4.png') }}" alt="image_not_found">
                     </div>
                     <div class="content">
                         <h4 class="title">
@@ -116,8 +116,8 @@
     <main>
         <!-- hero area start -->
         {{-- <section class="hero__area hero__area--2 position-relative custom-padding"><h1> ESPOIR</h1>
-            <span class="shape shape__1 position-absolute"><img src="assets/images/shape/moi.png" alt=""></span>
-            <span class="shape shape__2 position-absolute"><img src="assets/images/shape/moi.png" alt=""></span>
+            <span class="shape shape__1 position-absolute"><img src="{{ asset('assets/images/shape/moi.png') }}" alt=""></span>
+            <span class="shape shape__2 position-absolute"><img src="{{ asset('assets/images/shape/moi.png') }}" alt=""></span>
             <div class="container-fluid custom-width">
                 <div class="row mm-reverse">
                     <div class="col-xl-6 col-lg-7 align-self-center">
@@ -132,7 +132,7 @@
                     </div>
                     <div class="col-xl-6 col-lg-5">
                         <div class="hero__thumb hero__thumb--2 position-">
-                            <img src="assets/images/shape/moi.png" alt="img">
+                            <img src="{{ asset('assets/images/shape/moi.png') }}" alt="img">
                             <a href="http://www.youtube.com/embed/4xe72U7mXNg?rel=0&amp;controls=0&amp;showinfo=0" data-rel="lightcase:myCollection" data-animation="fadeInLeft" class="video-btn video-btn__2 d-flex align-items-center"><i class="fas fa-play"></i><span class="border-effect">play video</span></a>
                         </div>
                     </div>
@@ -146,13 +146,13 @@
     <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="{{url('assets/images/logo/bg-banner.jpg')}}" class="d-block w-100" alt="...">
+                            <img src="{{ asset('assets/images/logo/bg-banner.jpg') }}" class="d-block w-100" alt="...">
                         </div>
                         <div class="carousel-item">
-                            <img src="{{url('assets/images/logo/bg-banner.jpg')}}" class="d-block w-100" alt="...">
+                            <img src="{{ asset('assets/images/logo/bg-banner.jpg') }}" class="d-block w-100" alt="...">
                         </div>
                         <div class="carousel-item">
-                            <img src="{{url('assets/images/logo/bg-banner.jpg')}}" class="d-block w-100" alt="...">
+                            <img src="{{ asset('assets/images/logo/bg-banner.jpg') }}" class="d-block w-100" alt="...">
                         </div>
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
@@ -225,10 +225,10 @@
                 <div class="row">
                     <div class="col-xl-5 col-lg-7">
                     <div class="logo__left logo__left--2 position-relative">
-                            <img class="big" src="assets/images/logo/imm.jpg" alt="img"> 
+                            <img class="big" src="{{ asset('assets/images/logo/imm.jpg') }}" alt="img"> 
                         </div>
                         {{-- <div class="logo__right logo__left--1 position-absolute">
-                            <img class="small" src="assets/images/logo/moi.jpg" alt="img"> 
+                            <img class="small" src="{{ asset('assets/images/logo/moi.jpg') }}" alt="img"> 
                         </div> --}}
                     </div>
                     <div class="col-xl-6 offset-xl-1">
@@ -249,10 +249,10 @@
 
         <!-- populer menu area start -->
         <section class="popular-menu__area grey-bg position-relative pb-120">
-         {{--    <span class="shape shape__1 position-absolute"><img src="assets/images/shape/menu-shape-1.png" alt=""></span>
-            <span class="shape shape__2 position-absolute"><img src="assets/images/shape/menu-shape-2.png" alt=""></span>
-            <span class="shape shape__3 position-absolute"><img src="assets/images/shape/menu-shape-3.png" alt=""></span>
-            <span class="shape shape__4 position-absolute"><img src="assets/images/shape/menu-shape-4.png" alt=""></span>
+         {{--    <span class="shape shape__1 position-absolute"><img src="{{ asset('assets/images/shape/menu-shape-1.png') }}" alt=""></span>
+            <span class="shape shape__2 position-absolute"><img src="{{ asset('assets/images/shape/menu-shape-2.png') }}" alt=""></span>
+            <span class="shape shape__3 position-absolute"><img src="{{ asset('assets/images/shape/menu-shape-3.png') }}" alt=""></span>
+            <span class="shape shape__4 position-absolute"><img src="{{ asset('assets/images/shape/menu-shape-4.png') }}" alt=""></span>
              --}}<div class="container">
                 <div class="row">
                     <div class="col-xl-12 text-center">
@@ -282,7 +282,7 @@
                     <div class="col-xl-4 col-lg-6 col-md-6 grid-item cat1 cat5 mt-30">
                         <div class="popular-menu__item">
                             <div class="popular-menu__thumb">
-                                <img src="assets/images/logo/lampe.jpg" alt="">
+                                <img src="{{ asset('assets/images/logo/lampe.jpg') }}" alt="">
                                 
                             </div>
                             <div class="popular-menu__content text-center">
@@ -297,7 +297,7 @@
                     <div class="col-xl-4 col-lg-6 col-md-6 grid-item cat2 cat5 cat4 mt-30">
                         <div class="popular-menu__item">
                             <div class="popular-menu__thumb">
-                                <img src="assets/images/logo/ope.jpg" alt="">
+                                <img src="{{ asset('assets/images/logo/ope.jpg') }}" alt="">
                             </div>
                             <div class="popular-menu__content text-center">
                                 <h2 class="title">
@@ -311,7 +311,7 @@
                     <div class="col-xl-4 col-lg-6 col-md-6 grid-item cat1 cat2 cat5 mt-30">
                         <div class="popular-menu__item">
                             <div class="popular-menu__thumb">
-                                <img src="assets/images/logo/oct.jpg" alt="">
+                                <img src="{{ asset('assets/images/logo/oct.jpg') }}" alt="">
                             </div>
                             <div class="popular-menu__content text-center">
                                 <h2 class="title">
@@ -339,7 +339,7 @@
                     <div class="col-xl-4 col-lg-6 col-md-6 grid-item cat3 cat4 cat5 mt-30">
                         <div class="popular-menu__item">
                             <div class="popular-menu__thumb">
-                                <img src="assets/images/logo/refract.jpg" alt="">
+                                <img src="{{ asset('assets/images/logo/refract.jpg') }}" alt="">
                             </div>
                             <div class="popular-menu__content text-center">
                                 <h2 class="title">
@@ -367,7 +367,7 @@
                     <div class="col-xl-4 col-lg-6 col-md-6 grid-item cat1 cat5 cat4 mt-30">
                         <div class="popular-menu__item">
                             <div class="popular-menu__thumb">
-                                <img src="assets/images/logo/im.jpg" alt="">
+                                <img src="{{ asset('assets/images/logo/im.jpg') }}" alt="">
                             </div>
                             <div class="popular-menu__content text-center">
                                 <h2 class="title">
@@ -395,7 +395,7 @@
                     <div class="col-xl-4 col-lg-6 col-md-6 grid-item cat6 cat4 mt-30">
                         <div class="popular-menu__item">
                             <div class="popular-menu__thumb">
-                                <img src="assets/images/logo/teno.jpg" alt="">
+                                <img src="{{ asset('assets/images/logo/teno.jpg') }}" alt="">
                             </div>
                             <div class="popular-menu__content text-center">
                                 <h2 class="title">
@@ -424,8 +424,8 @@
             </div>
         </section>
         <section class="topgrade__area topgrade__area--2 grey-bg pt-115 pb-115 position-relative">
-           {{--  <span class="shape shape__1 position-absolute"><img src="assets/images/shape/top-grade-shape-2-1.png" alt=""></span>
-            <span class="shape shape__2 position-absolute"><img src="assets/images/shape/top-grade-shape-2-2.png" alt=""></span>
+           {{--  <span class="shape shape__1 position-absolute"><img src="{{ asset('assets/images/shape/top-grade-shape-2-1.png') }}" alt=""></span>
+            <span class="shape shape__2 position-absolute"><img src="{{ asset('assets/images/shape/top-grade-shape-2-2.png') }}" alt=""></span>
              --}}<div class="container">
                 <div class="row">
                     <div class="col-xl-12 text-center">
@@ -439,7 +439,7 @@
                     <div class="col-xl-3 col-lg-6 col-md-6 mt-30">
                         <div class="topgrade__item topgrade__item--2 text-center">
                             <div class="thumb">
-                                <img src="assets/images/logo/img.jpg" alt="">
+                                <img src="{{ asset('assets/images/logo/img.jpg') }}" alt="">
                                 <span class="count">01</span>
                             </div>
                             <div class="content mt-20">
@@ -451,7 +451,7 @@
                     <div class="col-xl-3 col-lg-6 col-md-6 mt-85">
                         <div class="topgrade__item topgrade__item--2 text-center">
                             <div class="thumb">
-                                <img src="assets/images/logo/lunette.jpg" alt="">
+                                <img src="{{ asset('assets/images/logo/lunette.jpg') }}" alt="">
                                 <span class="count">02</span>
                             </div>
                             <div class="content mt-20">
@@ -463,7 +463,7 @@
                     <div class="col-xl-3 col-lg-6 col-md-6 mt-30">
                         <div class="topgrade__item topgrade__item--2 text-center">
                             <div class="thumb">
-                                <img src="assets/images/logo/image.jpg" alt="">
+                                <img src="{{ asset('assets/images/logo/image.jpg') }}" alt="">
                                 <span class="count">03</span>
                             </div>
                             <div class="content mt-20">
@@ -476,7 +476,7 @@
                     <div class="col-xl-3 col-lg-6 col-md-6 mt-85">
                         <div class="topgrade__item topgrade__item--2 text-center">
                             <div class="thumb">
-                                <img src="assets/images/logo/im.jpg" alt="">
+                                <img src="{{ asset('assets/images/logo/im.jpg') }}" alt="">
                                 <span class="count">04</span>
                             </div>
                             <div class="content mt-20">

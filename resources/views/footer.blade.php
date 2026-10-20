@@ -1,5 +1,5 @@
 
-    <footer class="site-footer site-footer__3 pt-115 position-relative bg_img" data-opacity="8" data-overlay="dark" data-background="assets/images/bg/footer-3-1.jpg">
+    <footer class="site-footer site-footer__3 pt-115 position-relative bg_img" data-opacity="8" data-overlay="dark" data-background="{{ asset('assets/images/bg/footer-3-1.jpg') }}">
         <!-- blog area start -->
         <div class="blog__area position-relative pb-120">
             <div class="container">
@@ -16,7 +16,7 @@
                         <article class="blog__item">
                             <div class="thumb p-0 position-relative">
                                 <div class="img">
-                                    <img src="assets/images/logo/image.jpg" alt="">
+                                    <img src="{{ asset('assets/images/logo/image.jpg') }}" alt="">
                                 </div>
                             </div>
                             <div class="content">
@@ -38,7 +38,7 @@
                         <article class="blog__item">
                             <div class="thumb p-0 position-relative">
                                 <div class="img">
-                                    <img src="assets/images/logo/lunette.jpg" alt="">
+                                    <img src="{{ asset('assets/images/logo/lunette.jpg') }}" alt="">
                                 </div>
                             </div>
                             <div class="content">
@@ -60,7 +60,7 @@
                         <article class="blog__item">
                             <div class="thumb p-0 position-relative">
                                 <div class="img">
-                                    <img src="assets/images/logo/img.jpg" alt="">
+                                    <img src="{{ asset('assets/images/logo/img.jpg') }}" alt="">
                                 </div>
                             </div>
                             <div class="content">
@@ -92,7 +92,7 @@
                     <div class="col-xl-3 col-lg-6 mt-30">
                         <div class="footer__widget footer__info">
                             <div class="item d-flex align-items-center justify-content-center">
-                                <img src="assets/images/icons/ft-phone.png" alt="">
+                                <img src="{{ asset('assets/images/icons/ft-phone.png') }}" alt="">
                                 <span>Phone :</span>
                                 <a href="tel:88019339702520">+235 66470622</a>
                             </div>
@@ -101,7 +101,7 @@
                     <div class="col-xl-4 col-lg-6 mt-30 pl-55">
                         <div class="footer__widget footer__info">
                             <div class="item d-flex align-items-center justify-content-start">
-                                <img src="assets/images/icons/ft-map-marker.png" alt="">
+                                <img src="{{ asset('assets/images/icons/ft-map-marker.png') }}" alt="">
                                 <span>Address :</span>
                                 <p>Avenue Maldoum Bada</p>
                             </div>
@@ -110,7 +110,7 @@
                     <div class="col-xl-5 col-lg-8 mt-30 pl-55">
                         <div class="footer__widget">
                             <div class="subscribe">
-                                <form action="https://xpressrow.com/html/cafena/cafena/index.html">
+                                <form action="{{ route('home') }}">
                                     <input type="email" name="email" id="email" placeholder="Enter your email">
                                     <button type="submit" class="subscribe__btn">Subscribe <i class="fa fa-paper-plane"></i></button>
                                 </form>
@@ -125,7 +125,7 @@
                 <div class="row">
                     <div class="col-lg-7">
                         <div class="footer__logo--content">
-                            <img class="mb-15" src="assets/images/logo/img.png" alt="">
+                            <img class="mb-15" src="{{ asset('assets/images/logo/img.png') }}" alt="">
                             <p>Donec et nibh maximus, congue est eu, mattis nunc. Praesent ut quam quis quam venenatis fringilla. Morbi vestibulum</p>
                         </div>
                     </div>
@@ -178,7 +178,7 @@
       <div class="d-flex flex-wrap justify-content-between">
         <div>
           <a href="/" class="d-flex align-items-center p-0 text-light">
-            <img alt="logo" src="{{url('assets/images/lo.png')}}" />
+            <img alt="logo" src="{{ asset('assets/images/lo.png') }}" />
             <span class="ms-3 h5 font-weight-bold">ESPOIR DE VUE</span>
           </a>
           <p class="my-3 text-light" style="width: 250px">

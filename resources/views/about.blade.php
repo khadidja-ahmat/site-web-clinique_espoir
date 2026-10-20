@@ -40,7 +40,7 @@
         <div class="side-info__wrapper d-flex align-items-center justify-content-between">
             <div class="side-info__logo">
                 <a href="index.html">
-                    <img src="assets/images/logo/logo-black.png" alt="logo">
+                    <img src="{{ asset('assets/images/logo/logo-black.png') }}" alt="logo">
                 </a>
             </div>
             <div class="side-info__close">
@@ -93,7 +93,7 @@
         <div class="side-info__wrapper d-flex align-items-center justify-content-between">
             <div class="side-info__logo">
                 <a href="index.html">
-                    <img src="assets/images/logo/logo-black.png" alt="logo">
+                    <img src="{{ asset('assets/images/logo/logo-black.png') }}" alt="logo">
                 </a>
             </div>
             <div class="side-info__close">
@@ -142,7 +142,7 @@
             <div class="cart-bar__lists">
                 <div class="cart-bar__item position-relative d-flex">
                     <div class="thumb">
-                        <img src="assets/images/top-grade/tg-1.png" alt="image_not_found">
+                        <img src="{{ asset('assets/images/top-grade/tg-1.png') }}" alt="image_not_found">
                     </div>
                     <div class="content">
                         <h4 class="title">
@@ -154,7 +154,7 @@
                 </div>
                 <div class="cart-bar__item position-relative d-flex">
                     <div class="thumb">
-                        <img src="assets/images/top-grade/tg-2.png" alt="image_not_found">
+                        <img src="{{ asset('assets/images/top-grade/tg-2.png') }}" alt="image_not_found">
                     </div>
                     <div class="content">
                         <h4 class="title">
@@ -166,7 +166,7 @@
                 </div>
                 <div class="cart-bar__item position-relative d-flex">
                     <div class="thumb">
-                        <img src="assets/images/top-grade/tg-3.png" alt="image_not_found">
+                        <img src="{{ asset('assets/images/top-grade/tg-3.png') }}" alt="image_not_found">
                     </div>
                     <div class="content">
                         <h4 class="title">
@@ -178,7 +178,7 @@
                 </div>
                 <div class="cart-bar__item position-relative d-flex">
                     <div class="thumb">
-                        <img src="assets/images/top-grade/tg-4.png" alt="image_not_found">
+                        <img src="{{ asset('assets/images/top-grade/tg-4.png') }}" alt="image_not_found">
                     </div>
                     <div class="content">
                         <h4 class="title">
@@ -203,9 +203,9 @@
 
     <main>
         <!-- breadcrumb area start -->
-        <section class="breadcrumb-area pt-140 pb-140 bg_img" data-background="assets/images/logo/contact-bg.jpeg" data-overlay="dark" data-opacity="5">
-         <div class="shape shape__1"><img src="assets/images/shape/breadcrumb-shape-1.png" alt=""></div>
-            <div class="shape shape__2"><img src="assets/images/shape/breadcrumb-shape-2.png" alt=""></div>
+        <section class="breadcrumb-area pt-140 pb-140 bg_img" data-background="{{ asset('assets/images/logo/contact-bg.jpeg') }}" data-overlay="dark" data-opacity="5">
+         <div class="shape shape__1"><img src="{{ asset('assets/images/shape/breadcrumb-shape-1.png') }}" alt=""></div>
+            <div class="shape shape__2"><img src="{{ asset('assets/images/shape/breadcrumb-shape-2.png') }}" alt=""></div>
              <div class="container">
                 <div class="row">
                     <div class="col-xl-12 text-center">
@@ -228,14 +228,14 @@
 
         <!-- about area start -->
         <section class="about__area about__area--2 position-relative pt-125 pb-105">
-            <span class="shape shape__1 position-absolute"><img src="assets/images/shape/about-shape-2-1.png" alt=""></span>
-            <span class="shape shape__2 position-absolute"><img src="assets/images/shape/about-shape-2-2.png" alt=""></span>
+            <span class="shape shape__1 position-absolute"><img src="{{ asset('assets/images/shape/about-shape-2-1.png') }}" alt=""></span>
+            <span class="shape shape__2 position-absolute"><img src="{{ asset('assets/images/shape/about-shape-2-2.png') }}" alt=""></span>
             <div class="container">
                 <div class="row">
                     <div class="col-xl-5 col-lg-7">
                         <div class="about__left about__left--2 position-relative">
-                            <img class="big" src="assets/images/about/about-img-2-1.png" alt="img">
-                            <img class="small position-absolute" src="assets/images/about/about-img-2-2.png" alt="img">
+                            <img class="big" src="{{ asset('assets/images/about/about-img-2-1.png') }}" alt="img">
+                            <img class="small position-absolute" src="{{ asset('assets/images/about/about-img-2-2.png') }}" alt="img">
                         </div>
                     </div>
                     <div class="col-xl-6 offset-xl-1">
@@ -273,7 +273,7 @@
                     <div class="col-xl-4 col-lg-6 col-md-6 mt-30 text-center">
                         <div class="wcu__item">
                             <div class="icon">
-                                <img src="assets/images/icons/wcu-1.png" alt="">
+                                <img src="{{ asset('assets/images/icons/wcu-1.png') }}" alt="">
                             </div>
                             <div class="content">
                                 <h2 class="title">testy coffee recipe</h2>
@@ -285,7 +285,7 @@
                     <div class="col-xl-4 col-lg-6 col-md-6 mt-30 text-center">
                         <div class="wcu__item">
                             <div class="icon">
-                                <img src="assets/images/icons/wcu-2.png" alt="">
+                                <img src="{{ asset('assets/images/icons/wcu-2.png') }}" alt="">
                             </div>
                             <div class="content">
                                 <h2 class="title">Great Location</h2>
@@ -297,7 +297,7 @@
                     <div class="col-xl-4 col-lg-6 col-md-6 mt-30 text-center">
                         <div class="wcu__item">
                             <div class="icon">
-                                <img src="assets/images/icons/wcu-1.png" alt="">
+                                <img src="{{ asset('assets/images/icons/wcu-1.png') }}" alt="">
                             </div>
                             <div class="content">
                                 <h2 class="title">Professional Chef</h2>
@@ -314,7 +314,7 @@
         <!-- best-coffe section start -->
         <div class="best-coffe__area position-relative">
             <div class="best-coffe__bg">
-                <img src="assets/images/logo/imm.jpg" alt="">
+                <img src="{{ asset('assets/images/logo/imm.jpg') }}" alt="">
             </div>
             <div class="container">
             <div class="row">
@@ -353,7 +353,7 @@
                     <div class="col-xl-4 col-lg-6 col-md-6 mt-30">
                         <div class="team__box">
                             <div class="thumb mb-30">
-                                <img src="assets/images/team/team-1.jpg" alt="">
+                                <img src="{{ asset('assets/images/team/team-1.jpg') }}" alt="">
                                 <div class="social-links">
                                     <button class="social-links__trigger d-flex align-items-center justify-content-center" type="button">
                                         <i class="fal fa-plus"></i>
@@ -375,7 +375,7 @@
                     <div class="col-xl-4 col-lg-6 col-md-6 mt-30">
                         <div class="team__box">
                             <div class="thumb mb-30">
-                                <img src="assets/images/team/team-2.jpg" alt="">
+                                <img src="{{ asset('assets/images/team/team-2.jpg') }}" alt="">
                                 <div class="social-links">
                                     <button class="social-links__trigger" type="button">
                                         <i class="fal fa-plus"></i>
@@ -397,7 +397,7 @@
                     <div class="col-xl-4 col-lg-6 col-md-6 mt-30">
                         <div class="team__box">
                             <div class="thumb mb-30">
-                                <img src="assets/images/team/team-1.jpg" alt="">
+                                <img src="{{ asset('assets/images/team/team-1.jpg') }}" alt="">
                                 <div class="social-links">
                                     <button class="social-links__trigger" type="button">
                                         <i class="fal fa-plus"></i>
