@@ -20,6 +20,7 @@ use Illuminate\Support\Facades\Route;
 Route::redirect('/', '/home');
 Route::get('home', [PageController::class, 'home'])->name('home');
 Route::get('about', [PageController::class, 'about'])->name('about');
+Route::get('equipe', [PageController::class, 'equipe'])->name('equipe');
 Route::get('contact', [PageController::class, 'contact'])->name('contact');
 
 /*

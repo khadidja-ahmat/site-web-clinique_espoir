@@ -6,7 +6,7 @@ Application web de gestion d'une clinique, développée en **Laravel** : un site
 
 ## Fonctionnalités
 
-- Site public : accueil, à propos, contact
+- Site public : accueil, à propos, équipe médicale (nom et spécialité), contact
 - Connexion du personnel (session, limitation à 5 tentatives par minute, déconnexion)
 - Toutes les pages de gestion sont protégées : sans connexion, on est renvoyé vers `/login`
 - Gestion complète (liste, ajout, modification, suppression) des patients, médecins, rendez-vous, consultations, ordonnances, employés et historiques

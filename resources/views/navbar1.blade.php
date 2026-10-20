@@ -104,6 +104,7 @@
                                          <li><a class="dropdown-item" href="{{route('list.employe')}}">Adresse</a></li>
                                         </ul> --}}
                                     </li>
+                                    <li><a href="{{ route('equipe') }}">Équipe</a></li>
                                     @auth
 <li><a href="#0">listes</a>
                                          <ul class="sub-menu"aria-labelledby="navbarDropdown">

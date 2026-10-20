@@ -20,7 +20,13 @@ class ClinicTest extends TestCase
 
     public static function publicPages(): array
     {
-        return [['/home'], ['/about'], ['/contact'], ['/login']];
+        return [['/home'], ['/about'], ['/equipe'], ['/contact'], ['/login']];
+    }
+
+    public function test_equipe_page_shows_doctor_names_only(): void
+    {
+        $this->seed(DemoDataSeeder::class);
+        $this->get('/equipe')->assertOk()->assertSee('Dr Exemple Un')->assertSee('Cardiologie')->assertDontSee('medecin1@example.com');
     }
 
     public function test_root_redirects_to_home(): void
