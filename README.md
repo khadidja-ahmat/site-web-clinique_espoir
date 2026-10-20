@@ -2,7 +2,7 @@
 
 Application web de gestion d'une clinique, développée en **Laravel** : un site vitrine public et une partie réservée au personnel (patients, médecins, rendez-vous, consultations, ordonnances, employés, historiques médicaux).
 
-> Ce projet est la version **100 % Laravel**. Une autre version de la même clinique, dont l'administration est écrite en PHP natif avec mon générateur **ChariPHP**, est présentée dans le dépôt ChariPHP (lien à ajouter ici).
+> Ce projet est la version **100 % Laravel**. Une autre version de la même clinique, dont l'administration est écrite en PHP natif avec mon générateur **ChariPHP**, est présentée dans le dépôt ChariPHP.
 
 ## Fonctionnalités
 
