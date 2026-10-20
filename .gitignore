@@ -16,5 +16,9 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
+
+# Fichiers du système et images envoyées par le site : à ne pas publier
 .DS_Store
 ._*
+/public/images/articles/*
+!/public/images/articles/.gitkeep
