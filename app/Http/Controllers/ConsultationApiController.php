@@ -20,12 +20,11 @@ class ConsultationApiController extends Controller
     public function store(Request $request){
 
         $validator = Validator::make($request->all(), [
-            'date' => 'required',  
-            'patient_id' => 'required',
-            'medecin_id' => 'required',
-            'type' => 'required',
-            'resultat' => 'required',
-           
+            'date' => 'required|date',
+            'patient_id' => 'required|exists:patient,id',
+            'medecin_id' => 'required|exists:medecin,id',
+            'type' => 'required|string|max:255',
+            'resultat' => 'required|string',
         ]);
         if($validator->passes()){
             $consultation = new Consultation();
@@ -53,12 +52,12 @@ class ConsultationApiController extends Controller
 }
 public function update(Request $request, $id){
     $validator = Validator::make($request->all(), [
-        'date' => 'required',  
-        'patient_id' => 'required',
-        'medecin_id' => 'required',
-        'type' => 'required',
-        'resultat' => 'required',
-    ]);
+            'date' => 'required|date',
+            'patient_id' => 'required|exists:patient,id',
+            'medecin_id' => 'required|exists:medecin,id',
+            'type' => 'required|string|max:255',
+            'resultat' => 'required|string',
+        ]);
 
     if($validator->passes()){
         

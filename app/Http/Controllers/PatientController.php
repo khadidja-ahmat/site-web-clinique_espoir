@@ -21,13 +21,13 @@ class PatientController extends Controller
     public function store(Request $request){
 
         $validator = Validator::make($request->all(), [
-            'nom' => 'required',  
-            'date_naissance' => 'required',
-            'genre' => 'required',
-            'adresse' => 'required',
-            'tel' => 'required',
-            'ACO' => 'required',
-            'AFTO' => 'required',
+            'nom' => 'required|string|max:255',
+            'date_naissance' => 'required|date|before_or_equal:today',
+            'genre' => 'required|in:homme,femme',
+            'adresse' => 'required|string|max:255',
+            'tel' => 'required|string|max:30|regex:/^[0-9+\s().-]{6,30}$/',
+            'ACO' => 'required|string|max:100',
+            'AFTO' => 'required|string|max:100',
         ]);
         // dd($request->type);
         if($validator->passes()){
@@ -42,7 +42,7 @@ class PatientController extends Controller
    
             $save = $patient->save();
             // if($request->image){
-            //     $ext = $request->image->getClientOriginalExtension();
+            //     $ext = $request->image->extension();
             //     $newFileName = time().rand().'.'.$ext;
             //     $request->image->move(public_path().'/images/articles/', $newFileName);
             //     $article->image = $newFileName;
@@ -54,7 +54,7 @@ class PatientController extends Controller
             }
 
         }else{
-            return redirect()->route('list.patient')->withErrors($validator);
+            return redirect()->back()->withErrors($validator)->withInput();
         }
     }
         public function edit($id){
@@ -64,13 +64,13 @@ class PatientController extends Controller
 
     public function update(Request $request, $id){
         $validator = Validator::make($request->all(), [
-            'nom' => 'required',  
-            'date_naissance' => 'required',
-            'genre' => 'required',
-            'adresse' => 'required',
-            'tel' => 'required',
-            'ACO' => 'required', 
-            'AFTO' => 'required',
+            'nom' => 'required|string|max:255',
+            'date_naissance' => 'required|date|before_or_equal:today',
+            'genre' => 'required|in:homme,femme',
+            'adresse' => 'required|string|max:255',
+            'tel' => 'required|string|max:30|regex:/^[0-9+\s().-]{6,30}$/',
+            'ACO' => 'required|string|max:100',
+            'AFTO' => 'required|string|max:100',
         ]);
 
         if($validator->passes()){
@@ -92,7 +92,7 @@ class PatientController extends Controller
             }
 
         }else{
-            return redirect()->route('list.patient')->withErrors($validator);
+            return redirect()->back()->withErrors($validator)->withInput();
         }
     }
 

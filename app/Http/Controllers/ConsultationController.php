@@ -29,12 +29,11 @@ class ConsultationController extends Controller
     public function store(Request $request){
 
         $validator = Validator::make($request->all(), [
-            'date' => 'required',  
-            'patient_id' => 'required',
-            'medecin_id' => 'required',
-            'type' => 'required',
-            'resultat' => 'required',
-           
+            'date' => 'required|date',
+            'patient_id' => 'required|exists:patient,id',
+            'medecin_id' => 'required|exists:medecin,id',
+            'type' => 'required|string|max:255',
+            'resultat' => 'required|string',
         ]);
         if($validator->passes()){
             $consultation = new Consultation();
@@ -52,7 +51,7 @@ class ConsultationController extends Controller
             }
 
         }else{
-            return redirect()->route('create_c')->withErrors($validator);
+            return redirect()->back()->withErrors($validator)->withInput();
         }
     }
         public function edit($id){
@@ -64,11 +63,11 @@ class ConsultationController extends Controller
 
     public function update(Request $request, $id){
         $validator = Validator::make($request->all(), [
-            'dates' => 'required',  
-            'patient_id' => 'required',
-            'medecin_id' => 'required',
-            'type' => 'required',
-            'resultat' => 'required',
+            'date' => 'required|date',
+            'patient_id' => 'required|exists:patient,id',
+            'medecin_id' => 'required|exists:medecin,id',
+            'type' => 'required|string|max:255',
+            'resultat' => 'required|string',
         ]);
 
         if($validator->passes()){
@@ -76,7 +75,7 @@ class ConsultationController extends Controller
             $consultation= Consultation::find($id);
             $consultation->date = $request->date;
             $consultation->patient_id = $request->patient_id ;
-            $consultation->medecin_id  = $request->medecin_id ;
+            $consultation->medecin_id = $request->medecin_id;
             $consultation->type = $request->type;
             $consultation->resultat = $request->resultat;
            
@@ -89,7 +88,7 @@ class ConsultationController extends Controller
             }
 
         }else{
-            return redirect()->route('create_c')->withErrors($validator);
+            return redirect()->back()->withErrors($validator)->withInput();
         }
     }
 

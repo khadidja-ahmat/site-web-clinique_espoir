@@ -16,17 +16,17 @@ class PatientApiController extends Controller
     public function store(Request $request){
 
         $validator = Validator::make($request->all(), [
-            'noms' => 'required',  
-            'date_naissance' => 'required',
-            'genre' => 'required',
-            'adresse' => 'required',
-            'tel' => 'required',
-            'ACO' => 'required',
-            'AFTO' => 'required',
+            'nom' => 'required|string|max:255',
+            'date_naissance' => 'required|date|before_or_equal:today',
+            'genre' => 'required|in:homme,femme',
+            'adresse' => 'required|string|max:255',
+            'tel' => 'required|string|max:30|regex:/^[0-9+\s().-]{6,30}$/',
+            'ACO' => 'required|string|max:100',
+            'AFTO' => 'required|string|max:100',
         ]); 
         if($validator->passes()){
             $patient = new patient();
-            $patient->noms = $request->noms;
+            $patient->nom = $request->nom;
             $patient->date_naissance = $request->date_naissance;
             $patient->genre = $request->genre;
             $patient->adresse = $request->adresse;
@@ -57,17 +57,17 @@ class PatientApiController extends Controller
   public function update(Request $request, $id){
 
     $validator = Validator::make($request->all(), [
-        'noms' => 'required',  
-        'date_naissance' => 'required',
-        'genre' => 'required',
-        'adresse' => 'required',
-        'tel' => 'required',
-        'ACO' => 'required',
-        'AFTO' => 'required',
-    ]);        
+            'nom' => 'required|string|max:255',
+            'date_naissance' => 'required|date|before_or_equal:today',
+            'genre' => 'required|in:homme,femme',
+            'adresse' => 'required|string|max:255',
+            'tel' => 'required|string|max:30|regex:/^[0-9+\s().-]{6,30}$/',
+            'ACO' => 'required|string|max:100',
+            'AFTO' => 'required|string|max:100',
+        ]);        
      if($validator->passes()){
         $patient = Patient::find($id);
-        $patient->noms = $request->noms;
+        $patient->nom = $request->nom;
         $patient->date_naissance = $request->date_naissance;
         $patient->genre = $request->genre;
         $patient->adresse = $request->adresse;

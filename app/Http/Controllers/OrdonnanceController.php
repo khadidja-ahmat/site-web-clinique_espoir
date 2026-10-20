@@ -25,14 +25,13 @@ class OrdonnanceController extends Controller
     public function store(Request $request){
 
         $validator = Validator::make($request->all(), [
-            'patient_id' => 'required',
-            'nom_medicament' => 'required',  
-            'dosage' => 'required',
-            'frequence_utilisation' => 'required',
-            'date_prescription' => 'required',
-            'duree_prescription' => 'required',
-            'date_expiration' => 'required',
-           
+            'patient_id' => 'required|exists:patient,id',
+            'nom_medicament' => 'required|string|max:255',
+            'dosage' => 'required|string|max:255',
+            'frequence_utilisation' => 'required|string|max:255',
+            'date_prescription' => 'required|date',
+            'duree_prescription' => 'required|date|after_or_equal:date_prescription',
+            'date_expiration' => 'required|date|after_or_equal:date_prescription',
         ]);
         // dd($request->type);
         if($validator->passes()){
@@ -53,7 +52,7 @@ class OrdonnanceController extends Controller
             }
 
         }else{
-            return redirect()->route('list.ordonnance')->withErrors($validator);
+            return redirect()->back()->withErrors($validator)->withInput();
         }
     }
         public function edit($id){
@@ -64,13 +63,13 @@ class OrdonnanceController extends Controller
 
     public function update(Request $request, $id){
         $validator = Validator::make($request->all(), [
-            'patient_id' => 'required',
-            'nom_medicament' => 'required',  
-            'dosage' => 'required',
-            'frequence_utilisation' => 'required',
-            'date_prescription' => 'required',
-            'duree_prescription' => 'required',
-            'date_expiration' => 'required',
+            'patient_id' => 'required|exists:patient,id',
+            'nom_medicament' => 'required|string|max:255',
+            'dosage' => 'required|string|max:255',
+            'frequence_utilisation' => 'required|string|max:255',
+            'date_prescription' => 'required|date',
+            'duree_prescription' => 'required|date|after_or_equal:date_prescription',
+            'date_expiration' => 'required|date|after_or_equal:date_prescription',
         ]);
 
         if($validator->passes()){
@@ -92,7 +91,7 @@ class OrdonnanceController extends Controller
             }
 
         }else{
-            return redirect()->route('list.ordonnance')->withErrors($validator);
+            return redirect()->back()->withErrors($validator)->withInput();
         }
     }
 

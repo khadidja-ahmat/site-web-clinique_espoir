@@ -1,20 +1,25 @@
 <?php
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PatientApiController;
 use App\Http\Controllers\ConsultationApiController;
-use App\Http\Controllers\MedecinApiController;
+use App\Http\Controllers\PatientApiController;
+use Illuminate\Support\Facades\Route;
 
-Route::get('patients', [PatientApiController::class, 'patient']);
-Route::post('patient', [PatientApiController::class, 'store']);
-Route::delete('patient/{id}', [PatientApiController::class, 'destroy']);
-Route::put('patient/{id}', [PatientApiController::class, 'update']);
+/*
+|--------------------------------------------------------------------------
+| API (réservée : jeton Sanctum obligatoire)
+|--------------------------------------------------------------------------
+| Exemple de création d'un jeton : voir la section « API » du README.
+*/
 
-Route::get('consultations', [ConsultationApiController::class, 'consultations']);
-Route::post('consultation', [ConsultationApiController::class, 'store']);
-Route::delete('patient/{id}', [ConsultationApiController::class, 'destroy']);
-Route::put('patient/{id}', [ConsultationApiController::class, 'update']);
- 
-/* 
- Route::get('medecins', [MedecinApiController::class, 'medecin']); */
+Route::middleware('auth:sanctum')->group(function () {
+
+    Route::get('patients', [PatientApiController::class, 'patient']);
+    Route::post('patient', [PatientApiController::class, 'store']);
+    Route::put('patient/{id}', [PatientApiController::class, 'update']);
+    Route::delete('patient/{id}', [PatientApiController::class, 'destroy']);
+
+    Route::get('consultations', [ConsultationApiController::class, 'consultations']);
+    Route::post('consultation', [ConsultationApiController::class, 'store']);
+    Route::put('consultation/{id}', [ConsultationApiController::class, 'update']);
+    Route::delete('consultation/{id}', [ConsultationApiController::class, 'destroy']);
+});

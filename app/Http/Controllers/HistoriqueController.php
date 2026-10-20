@@ -26,12 +26,11 @@ class HistoriqueController extends Controller
     public function store(Request $request){
 
         $validator = Validator::make($request->all(), [
-            'patient_id' => 'required',
-            'resultat' => 'required',  
-            'prescription' => 'required',
-            'antecedant' => 'required',
-            'resultat_test' => 'required',
-           
+            'patient_id' => 'required|exists:patient,id',
+            'resultat' => 'required|string',
+            'prescription' => 'required|string',
+            'antecedant' => 'required|string',
+            'resultat_test' => 'required|string',
         ]);
 
         if($validator->passes()){
@@ -50,7 +49,7 @@ class HistoriqueController extends Controller
             }
 
         }else{
-            return redirect()->route('list.historique')->withErrors($validator);
+            return redirect()->back()->withErrors($validator)->withInput();
         }
     }
         public function edit($id){
@@ -61,11 +60,11 @@ class HistoriqueController extends Controller
 
     public function update(Request $request, $id){
         $validator = Validator::make($request->all(), [
-            'patient_id' => 'required',
-            'resultat' => 'required',  
-            'prescription' => 'required',
-            'antecedant' => 'required',
-            'resultat_test' => 'required',
+            'patient_id' => 'required|exists:patient,id',
+            'resultat' => 'required|string',
+            'prescription' => 'required|string',
+            'antecedant' => 'required|string',
+            'resultat_test' => 'required|string',
         ]);
 
         if($validator->passes()){
@@ -85,7 +84,7 @@ class HistoriqueController extends Controller
             }
 
         }else{
-            return redirect()->route('list.historique')->withErrors($validator);
+            return redirect()->back()->withErrors($validator)->withInput();
         }
     }
 

@@ -30,12 +30,11 @@ class RdvController extends Controller
     public function store(Request $request){
 
         $validator = Validator::make($request->all(), [
-            'dates' => 'required',  
-            'patient_id' => 'required',
-            'medecin_id' => 'required',
-            'type' => 'required',
-            'statut' => 'required',
-           
+            'dates' => 'required|date',
+            'patient_id' => 'required|exists:patient,id',
+            'medecin_id' => 'required|exists:medecin,id',
+            'type' => 'required|string|max:255',
+            'statut' => 'required|in:planifié,encours,annulé',
         ]);
         // dd($request->type);
         if($validator->passes()){
@@ -48,7 +47,7 @@ class RdvController extends Controller
    
             $save = $rdv->save();
             // if($request->image){
-            //     $ext = $request->image->getClientOriginalExtension();
+            //     $ext = $request->image->extension();
             //     $newFileName = time().rand().'.'.$ext;
             //     $request->image->move(public_path().'/images/articles/', $newFileName);
             //     $article->image = $newFileName;
@@ -60,7 +59,7 @@ class RdvController extends Controller
             }
 
         }else{
-            return redirect()->route('list.rdv')->withErrors($validator);
+            return redirect()->back()->withErrors($validator)->withInput();
         }
     }
         public function edit($id){
@@ -72,11 +71,11 @@ class RdvController extends Controller
 
     public function update(Request $request, $id){
         $validator = Validator::make($request->all(), [
-            'dates' => 'required',  
-            'patient_id' => 'required',
-            'medecin_id' => 'required',
-            'type' => 'required',
-            'statut' => 'required',
+            'dates' => 'required|date',
+            'patient_id' => 'required|exists:patient,id',
+            'medecin_id' => 'required|exists:medecin,id',
+            'type' => 'required|string|max:255',
+            'statut' => 'required|in:planifié,encours,annulé',
         ]);
 
         if($validator->passes()){
@@ -97,7 +96,7 @@ class RdvController extends Controller
             }
 
         }else{
-            return redirect()->route('list.rdv')->withErrors($validator);
+            return redirect()->back()->withErrors($validator)->withInput();
         }
     }
 
